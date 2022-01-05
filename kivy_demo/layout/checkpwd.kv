@@ -1,0 +1,30 @@
+#:kivy 2.0.0
+<CheckPwd>:
+	FloatLayout:
+		Label:
+			size_hint: (0.6, 0.2)
+			pos_hint: {'x':0.2, 'y':0.75}
+			text: 'password'
+			#text: '密碼'
+			font_size:'18sp'
+			#font_name: 'Sans'
+
+		Label:
+			id:now_pwd
+			size_hint: (0.6, 0.2)
+			pos_hint: {'x':0.2, 'y':0.5}
+			text: ''
+			font_size:'18sp'
+			markup:True
+
+		Button:
+			size_hint: (0.2, 0.2)
+			pos_hint: {'x':0.4, 'y':0.2}
+			text: 'Back'
+			font_size:'18sp'
+			on_release: root.back_page()
+
+		ProgressBar:
+			id:process_bar
+			size_hint: (0.9,0.1) 
+			pos_hint: {'x':0.05, 'y':0.05}

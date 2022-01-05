@@ -1,0 +1,49 @@
+#:kivy 2.0.0
+<Login>:
+	FloatLayout:
+		Label:
+			size_hint: (0.2, 0.15)
+			pos_hint: {'x':0.1, 'y':0.7}
+			text: 'Username : '
+			font_size:'18sp'
+			
+		TextInput:
+			id:usr
+			size_hint: (0.5, 0.15)
+			pos_hint: {'x':0.35, 'y':0.7}
+			font_size:'18sp'
+			write_tab: False
+			multiline: False
+			keyboard_suggestions: True
+			on_text_validate: pwd.focus = True #Tab change input
+
+		Label:
+			size_hint: (0.2, 0.15)
+			pos_hint: {'x':0.1, 'y':0.45}
+			text: 'Password : '
+			font_size:'18sp'
+		
+		TextInput:
+			id:pwd
+			size_hint: (0.5, 0.15)
+			pos_hint: {'x':0.35, 'y':0.45}
+			font_size:'18sp'
+			write_tab: False
+			multiline: False
+			password: True #replace with *
+			keyboard_suggestions: True
+			on_text_validate: usr.focus = True #Tab change input
+
+		Button:
+			size_hint: (0.2, 0.15)
+			pos_hint: {'x':0.25, 'y':0.15}
+			text: 'login'
+			font_size:'18sp'
+			on_release: root.app_login()
+
+		Button:
+			size_hint: (0.2, 0.15)
+			pos_hint: {'x':0.55, 'y':0.15}
+			text: 'quit'
+			font_size:'18sp'
+			on_release: root.app_quit()

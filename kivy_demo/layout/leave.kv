@@ -1,0 +1,26 @@
+#:kivy 2.0.0
+<Leave>:
+	size_hint:(0.6, 0.6)
+	title:'Quit'
+	title_size:'18sp'
+	
+	FloatLayout:
+		Label:
+			size_hint: (0.8, 0.6)
+			pos_hint: {'x':0.1, 'y':0.3}
+			text: 'Confirm to leave ?'
+			font_size:'18sp'
+		
+		Button:
+			size_hint: (0.4, 0.2)
+			pos_hint: {'x':0.05, 'y':0.1}
+			text: 'Yes'
+			font_size:'18sp'
+			on_release: root.confirm()
+
+		Button:
+			size_hint: (0.4, 0.2)
+			pos_hint: {'x':0.55, 'y':0.1}
+			text: 'No'
+			font_size:'18sp'
+			on_release: root.stayhere()
